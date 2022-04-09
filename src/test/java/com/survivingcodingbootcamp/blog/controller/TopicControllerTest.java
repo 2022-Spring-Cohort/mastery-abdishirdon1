@@ -1,6 +1,4 @@
 package com.survivingcodingbootcamp.blog.controller;
-
-import com.survivingcodingbootcamp.blog.model.Post;
 import com.survivingcodingbootcamp.blog.model.Topic;
 import com.survivingcodingbootcamp.blog.repository.TopicRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,7 +24,7 @@ public class TopicControllerTest {
     @BeforeEach
     void setUp() {
         topicRepo = mock(TopicRepository.class);
-        underTest = new TopicController(topicRepo);
+        underTest = new TopicController(topicRepo,postRepo);
         model = mock(Model.class);
         testTopic = new Topic("Test Topic");
         Optional<Topic> testOptional = Optional.of(testTopic);
