@@ -3,8 +3,10 @@ package com.survivingcodingbootcamp.blog.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.util.Collection;
+
+import javax.persistence.OneToMany;
+
 
 @Entity
 public class Topic {
@@ -18,19 +20,23 @@ public class Topic {
     protected Topic() {
     }
 
-    public Topic(String name) {
+    public Topic(String name)
+    {
         this.name = name;
     }
 
-    public Long getId() {
+    public Long getId() 
+    {
         return id;
     }
 
-    public String getName() {
+    public String getName()
+     {
         return name;
     }
 
-    public Collection<Post> getPosts() {
+    public Collection<Post> getPosts() 
+    {
         return posts;
     }
 
@@ -43,7 +49,8 @@ public class Topic {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+     {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -54,9 +61,10 @@ public class Topic {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() 
+    {
         int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 20 * result + (name != null ? name.hashCode() : 0);
         return result;
     }
 }
